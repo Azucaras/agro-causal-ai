@@ -1,0 +1,96 @@
+:root {
+  --escuro: #2c5f2d;
+  --musgo: #97bc62;
+  --creme: #f7f7f2;
+  --terra: #b85042;
+  --grafite: #2b2b28;
+  --cinza: #6b6b63;
+  --borda: #e3e3da;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--creme);
+  color: var(--grafite);
+  line-height: 1.55;
+}
+
+header {
+  background: var(--escuro);
+  color: #fff;
+  padding: 2.5rem 1.5rem 2rem;
+}
+header h1 { margin: 0; font-size: 1.9rem; letter-spacing: -0.02em; }
+header p { margin: 0.4rem 0 0; color: var(--musgo); }
+
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.cartao {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+.cartao h2 { margin: 0 0 0.4rem; font-size: 1.15rem; }
+.ajuda { margin: 0 0 1.1rem; color: var(--cinza); font-size: 0.92rem; }
+
+.controles { display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap; }
+label { display: flex; flex-direction: column; font-size: 0.82rem; color: var(--cinza); gap: 0.3rem; }
+input[type="number"] {
+  padding: 0.5rem 0.6rem; border: 1px solid var(--borda);
+  border-radius: 6px; font-size: 1rem; width: 8rem;
+}
+button {
+  background: var(--escuro); color: #fff; border: 0;
+  padding: 0.6rem 1.4rem; border-radius: 6px;
+  font-size: 0.95rem; cursor: pointer;
+}
+button:hover { background: #234a24; }
+button:disabled { background: var(--cinza); cursor: progress; }
+
+.estado { margin-top: 1rem; font-size: 0.9rem; color: var(--cinza); }
+.estado.erro { color: var(--terra); }
+
+.faixa { margin-top: 1.4rem; }
+.faixa h3 { margin: 0 0 0.5rem; font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--cinza); }
+
+.intervalo {
+  position: relative; height: 3.2rem;
+  border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda);
+}
+.barra {
+  position: absolute; top: 1.15rem; height: 0.85rem;
+  border-radius: 5px; background: var(--musgo);
+}
+.barra.falha { background: var(--terra); opacity: 0.75; }
+.verdade {
+  position: absolute; top: 0.55rem; height: 2.05rem;
+  width: 2px; background: var(--grafite);
+}
+.verdade span {
+  position: absolute; top: -1.05rem; left: 50%; transform: translateX(-50%);
+  font-size: 0.7rem; white-space: nowrap; color: var(--grafite);
+}
+
+.linha { display: flex; justify-content: space-between; padding: 0.35rem 0;
+  border-bottom: 1px solid var(--borda); font-size: 0.92rem; }
+.linha:last-child { border-bottom: 0; }
+.linha strong { font-variant-numeric: tabular-nums; }
+
+.veredito { margin-top: 1.2rem; padding: 0.9rem 1.1rem; border-radius: 8px;
+  font-size: 0.95rem; }
+.veredito.ok { background: #eef4e5; color: #2c5f2d; }
+.veredito.nao { background: #fbeeec; color: #8f3c31; }
+
+footer { border-top: 1px solid var(--borda); padding: 1.5rem;
+  color: var(--cinza); font-size: 0.85rem; text-align: center; }
